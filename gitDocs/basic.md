@@ -22,5 +22,5 @@ git commit -m "Initial commit"  # Commit with a message
 git remote add origin <URL>     # Link to remote repository
 git push -u origin main         # Push code to remote (GitHub)
 
-
+git push                        # Subsequent push
 ```
