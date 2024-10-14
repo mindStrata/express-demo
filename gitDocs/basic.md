@@ -1,26 +1,37 @@
-### Basic setup
+#### Basic setup
+To set your name and email for git configuration and code editor
 
 ```bash
-# Git configuration
-
-# To set your name
 git config --global user.name "Your Name"
-
-# To set email id
 git config --global user.email "example@domain.com"
+git config --global core.editor "code --wait" # Helpful while wrong committing
 
 # To see the configuration list
 git config --list
+```
 
-# To clone a repo
-git clone <LINK>
+#### Steps of committing codes to repo
 
+```bash
+git status # To confirm wheather there is any previous initializtion
+git init # To initialized git over a particular folder
 
-git init                       # Initialize git repository
-git add .                      # Stage all changes
-git commit -m "Initial commit"  # Commit with a message
-git remote add origin <URL>     # Link to remote repository
-git push -u origin main         # Push code to remote (GitHub)
+#Write your code, once it is done you can commit by the following command
+git add <file> <file> ...
+git add . #To add all file simontaneously (Depends on your need)
+git status # staging
 
-git push                        # Subsequent push
+git commit -m "your message" #should be in present tense and imparative sentence e.g., "add README.md file to codebase"
+```
+
+#### Command to check commit details
+
+```bash
+git log
+```
+
+The above command is not effect, to show the all commit in shorthand you can add `--oneline` after the above command.
+
+```bash
+git log --oneline
 ```
