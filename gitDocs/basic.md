@@ -1,10 +1,11 @@
 #### Basic setup
+
 To set your name and email for git configuration and code editor
 
 ```bash
 git config --global user.name "Your Name"
 git config --global user.email "example@domain.com"
-git config --global core.editor "code --wait" # Helpful while wrong committing
+git config --global core.editor "code --wait" # Helpful while wrong committing command
 
 # To see the configuration list
 git config --list
@@ -14,14 +15,14 @@ git config --list
 
 ```bash
 git status # To confirm wheather there is any previous initializtion
-git init # To initialized git over a particular folder
+git init # To initialize git over a particular folder
 
-#Write your code, once it is done you can commit by the following command
+#Write your code, once it is done you can commit by the following commands:
 git add <file> <file> ...
-git add . #To add all file simontaneously (Depends on your need)
+git add . #To add all files simultaneously (Depends on your need)
 git status # staging
 
-git commit -m "your message" #should be in present tense and imparative sentence e.g., "add README.md file to codebase"
+git commit -m "your message" #Should be in present tense and imparative sentence (e.g., "add README.md file to codebase").
 ```
 
 #### Command to check commit details
@@ -35,3 +36,23 @@ The above command is not effect, to show the all commit in shorthand you can add
 ```bash
 git log --oneline
 ```
+
+To view a particular commit history, the following command can be used:
+
+```bash
+git log <commit-hash> # git log ab12cd3
+```
+
+To see details of certain a commit, you can run:
+
+```bash
+git show <commit-hash>
+```
+
+#### Options with `git log <commit-hash>`:
+
+You can use various options with `git log` to customize the output:
+
+- `git log <commit-hash> --oneline`: Shows a condensed version of the commit history starting from the specified commit.
+- `git log <commit-hash> --stat`: Shows the commit history with statistics on the number of lines changed (added/removed).
+- `git log <commit-hash> -p`: Shows the patch (the actual changes in code) for each commit starting from the specified one.
