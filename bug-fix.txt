@@ -1,3 +1,4 @@
 Fix bug
 
 Another bug found and fixed.
+Another bug found and fixed.
