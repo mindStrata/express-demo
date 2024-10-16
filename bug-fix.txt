@@ -1,1 +1,3 @@
 Fix bug
+
+Another bug found and fixed.
