@@ -1,3 +1,9 @@
+/**
+ * @function convertUtcDateToLocal()
+ * @use Use to convert the UTC date format to standard date format (e.g., IST, GMT)
+ *
+ */
+
 function convertUtcDateToLocal(utcDateString) {
   const utcDate = new Date(utcDateString);
   const options = {
