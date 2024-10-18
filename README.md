@@ -21,9 +21,19 @@ npm init -y
 
 This command will automatically create a `package.json` file with default settings.
 
-## 3. Customize the `package.json` File
+## 3. Install Express.js
 
-Now, open the auto-generated `package.json` file in a text editor and modify it as per your app's requirements. Here's an example:
+To use **Express.js** in your project, you need to install it using `npm`. Run the following command:
+
+```bash
+npm install express
+```
+
+This will install **Express.js** and add it to your `package.json` dependencies.
+
+## 4. Customize the `package.json` File
+
+Now, open the auto-generated `package.json` file in a text editor and modify it as per your app's requirements. Here's an example with Express dependencies:
 
 ```json
 {
@@ -34,6 +44,9 @@ Now, open the auto-generated `package.json` file in a text editor and modify it 
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
   "keywords": [],
   "author": "Your Name",
   "license": "ISC",
@@ -41,7 +54,7 @@ Now, open the auto-generated `package.json` file in a text editor and modify it 
 }
 ```
 
-## 4. Create the `index.js` File
+## 5. Create the `index.js` File
 
 In the root directory of your project, create a file named `index.js`. This file will contain the code for your Express.js server.
 
@@ -51,7 +64,7 @@ Add the following code to set up a basic Express server:
 const express = require("express");
 
 const app = express();
-const PORT = process.env.PORT || 3100;
+const PORT = 3100;
 
 app.get("/", (req, res) => {
   res.send("Hello World");
@@ -64,7 +77,7 @@ app.listen(PORT, () => {
 module.exports = app;
 ```
 
-## 5. Test the Application Locally
+## 6. Test the Application Locally
 
 Before deploying, test the app locally to ensure everything works. Run the following command to start your Express server:
 
@@ -76,7 +89,7 @@ Visit [http://localhost:3100](http://localhost:3100) in your browser. If you see
 
 ---
 
-# 6. Prepare for Vercel Deployment
+# 7. Prepare for Vercel Deployment
 
 Vercel requires a configuration file to understand how to build and serve your app. In your project’s root directory, create a file named `vercel.json` with the following content:
 
@@ -102,7 +115,7 @@ This tells Vercel how to build and route requests to your Express.js server. Now
 
 ---
 
-## Store Your Code in a GitHub Repository
+## 8. Store Your Code in a GitHub Repository
 
 You can now push your code to a GitHub repository and deploy it through your Vercel account.
 
