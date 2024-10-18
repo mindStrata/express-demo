@@ -1,5 +1,0 @@
-Development environment configuration
-
-New config added (@2024)
-
-Another new config added (@2025)
