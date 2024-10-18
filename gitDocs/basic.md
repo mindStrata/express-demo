@@ -59,7 +59,7 @@ You can use various options with `git log` to customize the output:
 
 ---
 
-# How to Recover a Deleted Git Branch from GitHub
+# 1. How to Recover a Deleted Git Branch from GitHub
 
 If you have deleted a branch on your local machine but it still exists on GitHub, you can easily recover it. Follow these steps:
 
@@ -116,3 +116,59 @@ This will show you the current branches and confirm that your recovered branch i
 ---
 
 You have successfully recovered your deleted branch from GitHub! You can now continue working on it as needed.
+
+Here’s a simple documentation on how to rename a Git branch and push it to a remote repository:
+
+---
+
+# 2. How to Rename a Git Branch and Push to Remote
+
+If you have renamed a branch locally in Git and want to push the changes to your remote repository, follow these steps to do it correctly.
+
+## Step 1: Rename Your Local Branch
+
+To rename your current branch, use the following command:
+
+```bash
+git branch -m new-branch-name
+```
+
+Replace `new-branch-name` with your desired name for the branch.
+
+## Step 2: Push the Renamed Branch to Remote
+
+After renaming your branch, push it to the remote repository with:
+
+```bash
+git push origin new-branch-name
+```
+
+This command uploads your renamed branch to the remote repository.
+
+## Step 3: Delete the Old Remote Branch (if necessary)
+
+If the old branch name still exists on the remote and you want to remove it, use the following command:
+
+```bash
+git push origin --delete old-branch-name
+```
+
+Replace `old-branch-name` with the name of the branch you renamed.
+
+## Step 4: Set the Upstream Branch (if necessary)
+
+To set the upstream tracking for your renamed branch (if it’s not set automatically), use:
+
+```bash
+git push --set-upstream origin new-branch-name
+```
+
+This command links your local branch to the remote branch, making future pushes and pulls easier.
+
+## Common Errors and Solutions
+
+1. **Error: Remote branch exists**  
+   If you encounter an error indicating that the branch with the same name already exists on the remote, you need to delete the old remote branch first (see Step 3).
+
+2. **Error: Failed to push some refs**  
+   This error may occur if your local branch is behind the remote branch. To resolve this, first pull the changes from the remote branch, resolve any conflicts, and then attempt to push again.
