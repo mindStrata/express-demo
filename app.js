@@ -1,16 +1,26 @@
 import dotenv from "dotenv";
-dotenv.config({ path: "./.env" });
 import express from "express";
+import path from "path";
+import { fileURLToPath } from "url";
 import "./db/db.js";
+dotenv.config({ path: "./.env" });
+
+const __filename = fileURLToPath(import.meta.url); // @requires fileURLToPath from 'url' module
+const __dirname = path.dirname(__filename); // Retrieves the directory name of the current module
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.get("/", async (req, res, next) => {
-  res.send("Hello World...");
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+
+app.use(express.static(path.join(__dirname, "public")));
+
+app.get("/", (req, res) => {
+  res.render("index");
 });
 
-app.get("/getdata", async (req, res, next) => {
+app.get("/getdata", async (req, res) => {
   res.status(200).send({
     success: true,
     message: "Data fetched successfully",
