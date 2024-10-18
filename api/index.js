@@ -2,7 +2,6 @@ import dotenv from "dotenv";
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
-import "./db/db.js";
 dotenv.config({ path: "./.env" });
 
 const __filename = fileURLToPath(import.meta.url); // @requires fileURLToPath from 'url' module
@@ -40,6 +39,9 @@ app.get("/getdata", async (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
+/* app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+ */
+
+export default app;
