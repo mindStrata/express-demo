@@ -7,4 +7,7 @@ export default defineConfig({
     port: 4001,
   },
   plugins: [react()],
+  build: {
+    outDir: "dist",
+  },
 });
